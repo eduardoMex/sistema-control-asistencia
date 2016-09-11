@@ -194,8 +194,8 @@ public class frmlogin extends javax.swing.JFrame {
               frminicio.lblacceso.setText(tablalistado.getValueAt(0, 5).toString());
               
               if(!frminicio.lblacceso.getText().equals("Administrador")){
-                  frminicio.mnuarchivo.setEnabled(false);
-                  frminicio.mnuconfiguraciones.setEnabled(false);
+                  frminicio.menuArchivo.setEnabled(false);
+                  frminicio.menuConfiguraciones.setEnabled(false);
               }
              }
              else{

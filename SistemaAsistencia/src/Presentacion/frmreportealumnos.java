@@ -8,11 +8,8 @@ package Presentacion;
 import Logica.conexion;
 import Logica.falumno;
 import java.sql.Connection;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -27,7 +24,7 @@ import net.sf.jasperreports.view.JasperViewer;
 public class frmreportealumnos extends javax.swing.JInternalFrame{
 
        private conexion mysql=new conexion();
-    private Connection cn=mysql.conectar();
+       private Connection cn=mysql.conectar();
     /**
      * Creates new form frmvistaasistencia_salidaalumno
      */
@@ -249,11 +246,11 @@ public class frmreportealumnos extends javax.swing.JInternalFrame{
             try {
             JasperReport reporte=JasperCompileManager.compileReport("reportalumnos.jrxml");
             JasperPrint print=JasperFillManager.fillReport(reporte,null,this.cn);
-           JasperViewer.viewReport(print);
+           JasperViewer.viewReport(print, false);
             
             
         } catch (Exception e) {
-            System.out.print(e.getMessage());
+            System.err.print(e.getMessage());
         }
         
        

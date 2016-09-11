@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
  */
 public class frminicio extends javax.swing.JFrame implements  Runnable{
 String hora, minutos, segundos, ampm;
+
     Calendar calendario;
     Thread h1;
     /**
@@ -24,7 +25,7 @@ String hora, minutos, segundos, ampm;
     public frminicio() {
         initComponents();
         this.setExtendedState(frminicio.MAXIMIZED_BOTH);
-        this.setTitle("SISTEMA DE CONTROL DE ASISTENCIA - IE MARISCAL CACERES");
+        this.setTitle("SISTEMA DE CONTROL DE ASISTENCIA");
         
         h1 = new Thread(this);
         h1.start();
@@ -42,53 +43,53 @@ String hora, minutos, segundos, ampm;
     private void initComponents() {
 
         escritorio = new javax.swing.JDesktopPane();
-        jLabel1 = new javax.swing.JLabel();
+        lbltitulo = new javax.swing.JLabel();
         lblidtratabajor = new javax.swing.JLabel();
         lblnombres = new javax.swing.JLabel();
         lblapellidos = new javax.swing.JLabel();
         lblacceso = new javax.swing.JLabel();
         lblHora = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
-        fileMenu = new javax.swing.JMenu();
+        menuInicio = new javax.swing.JMenu();
         jMenuItem14 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
-        mnuarchivo = new javax.swing.JMenu();
+        menuArchivo = new javax.swing.JMenu();
         cutMenuItem = new javax.swing.JMenuItem();
         copyMenuItem = new javax.swing.JMenuItem();
         pasteMenuItem = new javax.swing.JMenuItem();
         jMenuItem16 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        menuRegistro = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
+        menuConsultas = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        helpMenu = new javax.swing.JMenu();
+        menuAsistencia = new javax.swing.JMenu();
         contentMenuItem = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        menuReportes = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenuItem15 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        mnuconfiguraciones = new javax.swing.JMenu();
+        menuHerramientas = new javax.swing.JMenu();
+        menuConfiguraciones = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
+        menuAyuda = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
+        menuSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         escritorio.setBackground(new java.awt.Color(153, 153, 255));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel1.setText("SISTEMA DE ASISTENCIA \"IE CIRO ALEGRIA BAZAN\"");
-        escritorio.add(jLabel1);
-        jLabel1.setBounds(140, 240, 1010, 70);
+        lbltitulo.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lbltitulo.setText("SISTEMA DE CONTROL DE ASISTENCIA ");
+        escritorio.add(lbltitulo);
+        lbltitulo.setBounds(140, 240, 1010, 70);
 
         lblidtratabajor.setText("jLabel2");
         escritorio.add(lblidtratabajor);
@@ -111,10 +112,10 @@ String hora, minutos, segundos, ampm;
         escritorio.add(lblHora);
         lblHora.setBounds(1150, 600, 210, 50);
 
-        fileMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/INICIO.png"))); // NOI18N
-        fileMenu.setMnemonic('f');
-        fileMenu.setText("Inicio");
-        fileMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menuInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/INICIO.png"))); // NOI18N
+        menuInicio.setMnemonic('f');
+        menuInicio.setText("Inicio");
+        menuInicio.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jMenuItem14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/businessman_add.png"))); // NOI18N
@@ -124,7 +125,7 @@ String hora, minutos, segundos, ampm;
                 jMenuItem14ActionPerformed(evt);
             }
         });
-        fileMenu.add(jMenuItem14);
+        menuInicio.add(jMenuItem14);
 
         jMenuItem7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/Close.png"))); // NOI18N
@@ -134,14 +135,14 @@ String hora, minutos, segundos, ampm;
                 jMenuItem7ActionPerformed(evt);
             }
         });
-        fileMenu.add(jMenuItem7);
+        menuInicio.add(jMenuItem7);
 
-        menuBar.add(fileMenu);
+        menuBar.add(menuInicio);
 
-        mnuarchivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/the_documents_icon.png"))); // NOI18N
-        mnuarchivo.setMnemonic('e');
-        mnuarchivo.setText("Archivo");
-        mnuarchivo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menuArchivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/the_documents_icon.png"))); // NOI18N
+        menuArchivo.setMnemonic('e');
+        menuArchivo.setText("Archivo");
+        menuArchivo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         cutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
         cutMenuItem.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -158,7 +159,7 @@ String hora, minutos, segundos, ampm;
                 cutMenuItemActionPerformed(evt);
             }
         });
-        mnuarchivo.add(cutMenuItem);
+        menuArchivo.add(cutMenuItem);
 
         copyMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_MASK));
         copyMenuItem.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -170,7 +171,7 @@ String hora, minutos, segundos, ampm;
                 copyMenuItemActionPerformed(evt);
             }
         });
-        mnuarchivo.add(copyMenuItem);
+        menuArchivo.add(copyMenuItem);
 
         pasteMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.ALT_MASK));
         pasteMenuItem.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -182,7 +183,7 @@ String hora, minutos, segundos, ampm;
                 pasteMenuItemActionPerformed(evt);
             }
         });
-        mnuarchivo.add(pasteMenuItem);
+        menuArchivo.add(pasteMenuItem);
 
         jMenuItem16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/el-informe-del-usuario-icono-9444-32.png"))); // NOI18N
@@ -192,13 +193,13 @@ String hora, minutos, segundos, ampm;
                 jMenuItem16ActionPerformed(evt);
             }
         });
-        mnuarchivo.add(jMenuItem16);
+        menuArchivo.add(jMenuItem16);
 
-        menuBar.add(mnuarchivo);
+        menuBar.add(menuArchivo);
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/eliminar-usuario-icono-7266-32.png"))); // NOI18N
-        jMenu3.setText("Registro");
-        jMenu3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menuRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/eliminar-usuario-icono-7266-32.png"))); // NOI18N
+        menuRegistro.setText("Registro");
+        menuRegistro.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jMenuItem9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/slideshare.png"))); // NOI18N
@@ -208,7 +209,7 @@ String hora, minutos, segundos, ampm;
                 jMenuItem9ActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem9);
+        menuRegistro.add(jMenuItem9);
 
         jMenuItem10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/edit_group.png"))); // NOI18N
@@ -218,13 +219,13 @@ String hora, minutos, segundos, ampm;
                 jMenuItem10ActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem10);
+        menuRegistro.add(jMenuItem10);
 
-        menuBar.add(jMenu3);
+        menuBar.add(menuRegistro);
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/gest_usuarios.png"))); // NOI18N
-        jMenu1.setText("Consultas");
-        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menuConsultas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/gest_usuarios.png"))); // NOI18N
+        menuConsultas.setText("Consultas");
+        menuConsultas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -235,7 +236,7 @@ String hora, minutos, segundos, ampm;
                 jMenuItem4ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem4);
+        menuConsultas.add(jMenuItem4);
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -246,14 +247,14 @@ String hora, minutos, segundos, ampm;
                 jMenuItem5ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem5);
+        menuConsultas.add(jMenuItem5);
 
-        menuBar.add(jMenu1);
+        menuBar.add(menuConsultas);
 
-        helpMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/checkbox-checked.png"))); // NOI18N
-        helpMenu.setMnemonic('h');
-        helpMenu.setText("Asistencia");
-        helpMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menuAsistencia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/checkbox-checked.png"))); // NOI18N
+        menuAsistencia.setMnemonic('h');
+        menuAsistencia.setText("Asistencia");
+        menuAsistencia.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         contentMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
         contentMenuItem.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -265,7 +266,7 @@ String hora, minutos, segundos, ampm;
                 contentMenuItemActionPerformed(evt);
             }
         });
-        helpMenu.add(contentMenuItem);
+        menuAsistencia.add(contentMenuItem);
 
         jMenuItem11.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -276,7 +277,7 @@ String hora, minutos, segundos, ampm;
                 jMenuItem11ActionPerformed(evt);
             }
         });
-        helpMenu.add(jMenuItem11);
+        menuAsistencia.add(jMenuItem11);
 
         aboutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
         aboutMenuItem.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -288,7 +289,7 @@ String hora, minutos, segundos, ampm;
                 aboutMenuItemActionPerformed(evt);
             }
         });
-        helpMenu.add(aboutMenuItem);
+        menuAsistencia.add(aboutMenuItem);
 
         jMenuItem13.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -299,13 +300,13 @@ String hora, minutos, segundos, ampm;
                 jMenuItem13ActionPerformed(evt);
             }
         });
-        helpMenu.add(jMenuItem13);
+        menuAsistencia.add(jMenuItem13);
 
-        menuBar.add(helpMenu);
+        menuBar.add(menuAsistencia);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/salirw.png"))); // NOI18N
-        jMenu2.setText("Reportes");
-        jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menuReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/salirw.png"))); // NOI18N
+        menuReportes.setText("Reportes");
+        menuReportes.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -316,7 +317,7 @@ String hora, minutos, segundos, ampm;
                 jMenuItem6ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem6);
+        menuReportes.add(jMenuItem6);
 
         jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -327,7 +328,7 @@ String hora, minutos, segundos, ampm;
                 jMenuItem8ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem8);
+        menuReportes.add(jMenuItem8);
 
         jMenuItem12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/2986.png"))); // NOI18N
@@ -337,7 +338,7 @@ String hora, minutos, segundos, ampm;
                 jMenuItem12ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem12);
+        menuReportes.add(jMenuItem12);
 
         jMenuItem15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/edit_group.png"))); // NOI18N
@@ -347,18 +348,18 @@ String hora, minutos, segundos, ampm;
                 jMenuItem15ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem15);
+        menuReportes.add(jMenuItem15);
 
-        menuBar.add(jMenu2);
+        menuBar.add(menuReportes);
 
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/Tools.png"))); // NOI18N
-        jMenu4.setText("Herramientas");
-        jMenu4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        menuBar.add(jMenu4);
+        menuHerramientas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/Tools.png"))); // NOI18N
+        menuHerramientas.setText("Herramientas");
+        menuHerramientas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menuBar.add(menuHerramientas);
 
-        mnuconfiguraciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/1837084.cfbfef783fe0d1f0fc44ae1c292101ab.gif"))); // NOI18N
-        mnuconfiguraciones.setText("Configuraciones");
-        mnuconfiguraciones.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menuConfiguraciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/1837084.cfbfef783fe0d1f0fc44ae1c292101ab.gif"))); // NOI18N
+        menuConfiguraciones.setText("Configuraciones");
+        menuConfiguraciones.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/xmyspace.png.pagespeed.ic.BvO8Orln7M.png"))); // NOI18N
@@ -368,33 +369,33 @@ String hora, minutos, segundos, ampm;
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        mnuconfiguraciones.add(jMenuItem1);
+        menuConfiguraciones.add(jMenuItem1);
 
-        menuBar.add(mnuconfiguraciones);
+        menuBar.add(menuConfiguraciones);
 
-        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/Question.png"))); // NOI18N
-        jMenu5.setText("Ayuda");
-        jMenu5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menuAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/Question.png"))); // NOI18N
+        menuAyuda.setText("Ayuda");
+        menuAyuda.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem2.setText("Acerca de...");
-        jMenu5.add(jMenuItem2);
+        menuAyuda.add(jMenuItem2);
 
         jMenuItem3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem3.setText("Ayuda");
-        jMenu5.add(jMenuItem3);
+        menuAyuda.add(jMenuItem3);
 
-        menuBar.add(jMenu5);
+        menuBar.add(menuAyuda);
 
-        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/Close.png"))); // NOI18N
-        jMenu6.setText("Salir");
-        jMenu6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
+        menuSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/Close.png"))); // NOI18N
+        menuSalir.setText("Salir");
+        menuSalir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menuSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu6MouseClicked(evt);
+                menuSalirMouseClicked(evt);
             }
         });
-        menuBar.add(jMenu6);
+        menuBar.add(menuSalir);
 
         setJMenuBar(menuBar);
 
@@ -428,10 +429,10 @@ String hora, minutos, segundos, ampm;
         form.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
-    private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
-       JOptionPane.showMessageDialog(null, "DESEA ABANDONAR EL SISTEMA"+"\n ALUMNO: RUBEN ESCOBAR LANDEO ");
+    private void menuSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSalirMouseClicked
+       JOptionPane.showMessageDialog(null, "DESEA ABANDONAR EL SISTEMA");
        dispose();
-    }//GEN-LAST:event_jMenu6MouseClicked
+    }//GEN-LAST:event_menuSalirMouseClicked
 
     private void cutMenuItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cutMenuItemMouseClicked
         
@@ -605,15 +606,6 @@ String hora, minutos, segundos, ampm;
     private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
     private javax.swing.JDesktopPane escritorio;
-    private javax.swing.JMenu fileMenu;
-    private javax.swing.JMenu helpMenu;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
@@ -635,9 +627,18 @@ String hora, minutos, segundos, ampm;
     public static javax.swing.JLabel lblapellidos;
     public static javax.swing.JLabel lblidtratabajor;
     public static javax.swing.JLabel lblnombres;
+    private javax.swing.JLabel lbltitulo;
+    public static javax.swing.JMenu menuArchivo;
+    private javax.swing.JMenu menuAsistencia;
+    private javax.swing.JMenu menuAyuda;
     private javax.swing.JMenuBar menuBar;
-    public static javax.swing.JMenu mnuarchivo;
-    public static javax.swing.JMenu mnuconfiguraciones;
+    public static javax.swing.JMenu menuConfiguraciones;
+    private javax.swing.JMenu menuConsultas;
+    private javax.swing.JMenu menuHerramientas;
+    private javax.swing.JMenu menuInicio;
+    private javax.swing.JMenu menuRegistro;
+    private javax.swing.JMenu menuReportes;
+    private javax.swing.JMenu menuSalir;
     private javax.swing.JMenuItem pasteMenuItem;
     // End of variables declaration//GEN-END:variables
 
@@ -655,7 +656,7 @@ String hora, minutos, segundos, ampm;
     }
 
     public void calcula() {
-        Calendar calendario = new GregorianCalendar();
+        calendario = new GregorianCalendar();
         Date fechaHoraActual = new Date();
 
 
