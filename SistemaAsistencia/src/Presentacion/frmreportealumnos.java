@@ -78,7 +78,7 @@ public class frmreportealumnos extends javax.swing.JInternalFrame{
         setMaximizable(true);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Agency FB", 1, 14), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Agency FB", 1, 14))); // NOI18N
         jPanel2.setFocusTraversalPolicyProvider(true);
 
         tablalistado.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -125,7 +125,7 @@ public class frmreportealumnos extends javax.swing.JInternalFrame{
         jLabel17.setToolTipText("");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("LISTA DE ALUMNOS : \"IE: CIRO ALEGRIA BAZAN\"");
+        jLabel1.setText("LISTA DE ALUMNOS");
 
         jButton1.setBackground(new java.awt.Color(0, 204, 51));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -245,7 +245,7 @@ public class frmreportealumnos extends javax.swing.JInternalFrame{
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            JasperReport reporte= JasperCompileManager.compileReport("reportalumnos.jrxml");
+            JasperReport reporte= JasperCompileManager.compileReport("REPORTE_LISTA_ALUMNOS.jrxml");
             JasperPrint print=JasperFillManager.fillReport(reporte,null,this.cn);
             JasperViewer.viewReport(print, false); 
         } catch (Exception e) {

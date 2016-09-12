@@ -133,7 +133,7 @@ public class frmreporteadministrativos extends javax.swing.JInternalFrame {
         jLabel16.setToolTipText("");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("LISTA DE ADMINISTRATIVOS \"IE: CIRO ALEGRIA BAZAN\"");
+        jLabel1.setText("LISTA DE ADMINISTRATIVOS");
 
         jButton1.setBackground(new java.awt.Color(0, 153, 153));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -151,25 +151,23 @@ public class frmreporteadministrativos extends javax.swing.JInternalFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(141, Short.MAX_VALUE)
+                .addContainerGap(236, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(lbltotalregistros)
                         .addGap(106, 106, 106))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel15)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGap(26, 26, 26)
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(45, 45, 45)
                                 .addComponent(btnbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton1)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(211, 211, 211))))))
+                                .addComponent(jButton1)))
+                        .addContainerGap())))
             .addComponent(jScrollPane1)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(277, 277, 277)
@@ -179,9 +177,9 @@ public class frmreporteadministrativos extends javax.swing.JInternalFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(31, 31, 31)
                 .addComponent(jLabel1)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -251,7 +249,7 @@ public class frmreporteadministrativos extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        
         try {
-            JasperReport reporte=JasperCompileManager.compileReport("reportedocentes.jrxml");
+            JasperReport reporte=JasperCompileManager.compileReport("REPORTE_LISTA_ADMINISTRATIVOS.jrxml");
             JasperPrint print=JasperFillManager.fillReport(reporte,null,this.cn);
            JasperViewer.viewReport(print);
             
