@@ -14,6 +14,7 @@ import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
 
@@ -243,12 +244,10 @@ public class frmreportealumnos extends javax.swing.JInternalFrame{
     }//GEN-LAST:event_tablalistadoMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-            try {
-            JasperReport reporte=JasperCompileManager.compileReport("reportalumnos.jrxml");
+        try {
+            JasperReport reporte= JasperCompileManager.compileReport("reportalumnos.jrxml");
             JasperPrint print=JasperFillManager.fillReport(reporte,null,this.cn);
-           JasperViewer.viewReport(print, false);
-            
-            
+            JasperViewer.viewReport(print, false); 
         } catch (Exception e) {
             System.err.print(e.getMessage());
         }
