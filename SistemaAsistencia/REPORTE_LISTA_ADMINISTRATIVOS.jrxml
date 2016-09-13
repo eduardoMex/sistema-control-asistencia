@@ -1,28 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
-<!-- 2016-09-11T21:42:13 -->
+<!-- 2016-09-12T20:43:27 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="REPORTE_LISTA_ADMINISTRATIVOS" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9bec197a-05fe-4613-8c0d-08861714e141">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="local"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<queryString language="SQL">
-		<![CDATA[SELECT
-     administrativo.`idadministrativo` AS administrativo_idadministrativo,
-     administrativo.`idcargo` AS administrativo_idcargo,
-     administrativo.`nombres` AS administrativo_nombres,
-     administrativo.`apellidos` AS administrativo_apellidos,
-     administrativo.`dni` AS administrativo_dni,
-     administrativo.`telefono` AS administrativo_telefono,
-     administrativo.`direccion` AS administrativo_direccion,
-     administrativo.`email` AS administrativo_email,
-     administrativo.`sexo` AS administrativo_sexo,
-     administrativo.`fecha_ingreso` AS administrativo_fecha_ingreso
-FROM
-     `administrativo` administrativo]]>
+		<![CDATA[CALL `REPORTE_LISTA_ADMINISTRATIVOS` ]]>
 	</queryString>
-	<field name="administrativo_idadministrativo" class="java.lang.Integer"/>
-	<field name="administrativo_idcargo" class="java.lang.Integer"/>
+	<field name="cargo_descripcion" class="java.lang.String"/>
 	<field name="administrativo_nombres" class="java.lang.String"/>
 	<field name="administrativo_apellidos" class="java.lang.String"/>
 	<field name="administrativo_dni" class="java.lang.String"/>
@@ -39,18 +27,11 @@ FROM
 			<frame>
 				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="41d4549f-f90c-4204-bc6e-ec5d2c101096"/>
 				<staticText>
-					<reportElement x="20" y="20" width="527" height="43" forecolor="#FFFFFF" uuid="0bd14fb5-a01e-414a-83ad-5ea2fdfe27e1"/>
-					<textElement>
+					<reportElement x="0" y="25" width="595" height="43" forecolor="#FFFFFF" uuid="0bd14fb5-a01e-414a-83ad-5ea2fdfe27e1"/>
+					<textElement textAlignment="Center">
 						<font size="34" isBold="true"/>
 					</textElement>
 					<text><![CDATA[LISTA DE ADMINISTRATIVOS]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="306" y="63" width="180" height="20" forecolor="#FFFFFF" uuid="067d17c8-b5f0-4d26-a63c-8bcbdf27e9c6"/>
-					<textElement textAlignment="Right">
-						<font size="14" isBold="false"/>
-					</textElement>
-					<text><![CDATA[IE. CIRO ALEGRIA BAZAN]]></text>
 				</staticText>
 			</frame>
 		</band>
@@ -59,156 +40,247 @@ FROM
 		<band height="13"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="21">
-			<line>
-				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="82466e2b-044e-45af-9629-ee00b8c53dda"/>
-			</line>
+		<band height="40">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<staticText>
-				<reportElement mode="Opaque" x="0" y="0" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="33f85b9e-350a-468a-ad0b-d95358c59a14"/>
-				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+				<reportElement mode="Opaque" x="0" y="0" width="70" height="40" forecolor="#006699" backcolor="#E6E6E6" uuid="33f85b9e-350a-468a-ad0b-d95358c59a14">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
 				</textElement>
-				<text><![CDATA[administrativo_idadministrativo]]></text>
+				<text><![CDATA[Cargo]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="55" y="0" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b737ae95-0fce-43cd-9633-4a3bb97d7783"/>
-				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+				<reportElement mode="Opaque" x="70" y="0" width="70" height="40" forecolor="#006699" backcolor="#E6E6E6" uuid="e0ea06d3-ecc0-493f-aaff-37ee545bbd20"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
 				</textElement>
-				<text><![CDATA[administrativo_idcargo]]></text>
+				<text><![CDATA[Nombres]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="110" y="0" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="e0ea06d3-ecc0-493f-aaff-37ee545bbd20"/>
-				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+				<reportElement mode="Opaque" x="140" y="0" width="55" height="40" forecolor="#006699" backcolor="#E6E6E6" uuid="7d950c85-60d7-4ad3-98e9-af1e15e2b016"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
 				</textElement>
-				<text><![CDATA[administrativo_nombres]]></text>
+				<text><![CDATA[Apellidos]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="165" y="0" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="7d950c85-60d7-4ad3-98e9-af1e15e2b016"/>
-				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+				<reportElement mode="Opaque" x="195" y="0" width="55" height="40" forecolor="#006699" backcolor="#E6E6E6" uuid="ef8d530f-d126-48c6-bf25-492216b994f7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
 				</textElement>
-				<text><![CDATA[administrativo_apellidos]]></text>
+				<text><![CDATA[DNI]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="220" y="0" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="ef8d530f-d126-48c6-bf25-492216b994f7"/>
-				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+				<reportElement mode="Opaque" x="250" y="0" width="55" height="40" forecolor="#006699" backcolor="#E6E6E6" uuid="32968cf2-1ae5-4654-940a-aa49f7b345ec"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
 				</textElement>
-				<text><![CDATA[administrativo_dni]]></text>
+				<text><![CDATA[Telefono]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="275" y="0" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="32968cf2-1ae5-4654-940a-aa49f7b345ec"/>
-				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+				<reportElement mode="Opaque" x="305" y="0" width="80" height="40" forecolor="#006699" backcolor="#E6E6E6" uuid="f4e54258-5073-489d-9510-fb841e1ad88a"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
 				</textElement>
-				<text><![CDATA[administrativo_telefono]]></text>
+				<text><![CDATA[Dirección]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="330" y="0" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="f4e54258-5073-489d-9510-fb841e1ad88a"/>
-				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+				<reportElement mode="Opaque" x="385" y="0" width="59" height="40" forecolor="#006699" backcolor="#E6E6E6" uuid="16ab0b20-9165-4b1f-8757-e25561a3a45f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
 				</textElement>
-				<text><![CDATA[administrativo_direccion]]></text>
+				<text><![CDATA[Correo Electronico]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="385" y="0" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="16ab0b20-9165-4b1f-8757-e25561a3a45f"/>
-				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+				<reportElement mode="Opaque" x="444" y="0" width="55" height="40" forecolor="#006699" backcolor="#E6E6E6" uuid="2d07bdc3-33e1-4f4f-b08b-0619fb9e85f0"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
 				</textElement>
-				<text><![CDATA[administrativo_email]]></text>
+				<text><![CDATA[Sexo]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="440" y="0" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="2d07bdc3-33e1-4f4f-b08b-0619fb9e85f0"/>
-				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+				<reportElement mode="Opaque" x="499" y="0" width="55" height="40" forecolor="#006699" backcolor="#E6E6E6" uuid="9000a379-a58b-4375-b83d-cd849722e83f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
 				</textElement>
-				<text><![CDATA[administrativo_sexo]]></text>
-			</staticText>
-			<staticText>
-				<reportElement mode="Opaque" x="495" y="0" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="9000a379-a58b-4375-b83d-cd849722e83f"/>
-				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
-				</textElement>
-				<text><![CDATA[administrativo_fecha_ingreso]]></text>
+				<text><![CDATA[Fecha Registro]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="20">
-			<line>
-				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="63e6bed5-9e9f-411a-bada-08ca465ec975"/>
-			</line>
-			<textField isStretchWithOverflow="true">
-				<reportElement x="0" y="0" width="55" height="20" uuid="e7de22b4-171a-4b71-9d49-cab275d825b9"/>
-				<textElement>
-					<font size="10"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="70" height="20" uuid="e7de22b4-171a-4b71-9d49-cab275d825b9"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{administrativo_idadministrativo}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{cargo_descripcion}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement x="55" y="0" width="55" height="20" uuid="a268c4f1-b8ad-4682-9cc7-e5abf48824d6"/>
-				<textElement>
-					<font size="10"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{administrativo_idcargo}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement x="110" y="0" width="55" height="20" uuid="e3a6d58d-02a2-44e2-bad5-e1e5e0ea9c0f"/>
-				<textElement>
-					<font size="10"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="70" y="0" width="70" height="20" uuid="e3a6d58d-02a2-44e2-bad5-e1e5e0ea9c0f"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{administrativo_nombres}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement x="165" y="0" width="55" height="20" uuid="dfa888ad-a77e-492a-b140-74f5a5d5b319"/>
-				<textElement>
-					<font size="10"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="140" y="0" width="55" height="20" uuid="dfa888ad-a77e-492a-b140-74f5a5d5b319"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{administrativo_apellidos}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement x="220" y="0" width="55" height="20" uuid="90d25af8-65cf-4c7d-8cbc-22de282cfce7"/>
-				<textElement>
-					<font size="10"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="195" y="0" width="55" height="20" uuid="90d25af8-65cf-4c7d-8cbc-22de282cfce7"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{administrativo_dni}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement x="275" y="0" width="55" height="20" uuid="2d9b6831-1f07-4188-abaa-4aa9f2f57a4e"/>
-				<textElement>
-					<font size="10"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="250" y="0" width="55" height="20" uuid="2d9b6831-1f07-4188-abaa-4aa9f2f57a4e"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{administrativo_telefono}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement x="330" y="0" width="55" height="20" uuid="3c98d55a-defd-45ee-845e-5b2281e40c86"/>
-				<textElement>
-					<font size="10"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="305" y="0" width="80" height="20" uuid="3c98d55a-defd-45ee-845e-5b2281e40c86"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{administrativo_direccion}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement x="385" y="0" width="55" height="20" uuid="7544dc16-bbf2-486f-a431-70c0e7d84f24"/>
-				<textElement>
-					<font size="10"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="385" y="0" width="59" height="20" uuid="7544dc16-bbf2-486f-a431-70c0e7d84f24"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{administrativo_email}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement x="440" y="0" width="55" height="20" uuid="86d1edc2-8db4-4497-8415-36058b501d75"/>
-				<textElement>
-					<font size="10"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="444" y="0" width="55" height="20" uuid="86d1edc2-8db4-4497-8415-36058b501d75"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{administrativo_sexo}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement x="495" y="0" width="55" height="20" uuid="acd7bf0d-3d4b-44da-8cae-ee7ae62d0ffd"/>
-				<textElement>
-					<font size="10"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="499" y="0" width="55" height="20" uuid="acd7bf0d-3d4b-44da-8cae-ee7ae62d0ffd"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{administrativo_fecha_ingreso}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{administrativo_fecha_ingreso}) ]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -216,19 +288,20 @@ FROM
 		<band/>
 	</columnFooter>
 	<pageFooter>
-		<band height="17">
+		<band height="13">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<textField>
-				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="bcf6fc2d-5d89-47a1-a885-039bff6a04ef"/>
+				<reportElement mode="Opaque" x="-1" y="0" width="515" height="13" backcolor="#E6E6E6" uuid="bcf6fc2d-5d89-47a1-a885-039bff6a04ef"/>
 				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+"de"]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
-				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="094ceb01-f294-4077-89ad-0bbc1c909e0d"/>
+				<reportElement mode="Opaque" x="514" y="0" width="40" height="13" backcolor="#E6E6E6" uuid="094ceb01-f294-4077-89ad-0bbc1c909e0d"/>
 				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement x="0" y="4" width="100" height="13" uuid="14b9e1b6-9e33-4bfe-966d-b1f83ac1b053"/>
-				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				<reportElement x="-1" y="0" width="100" height="13" uuid="14b9e1b6-9e33-4bfe-966d-b1f83ac1b053"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date())]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageFooter>
