@@ -208,13 +208,11 @@ public class frmreporteasis_alumnos extends javax.swing.JInternalFrame {
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
          try {
-            JasperReport reporte=JasperCompileManager.compileReport("reporteasistencia_alumnos.jrxml");
+            JasperReport reporte=JasperCompileManager.compileReport("REPORTE_ASISTENCIA_ALUMNOS.jrxml");
             JasperPrint print=JasperFillManager.fillReport(reporte,null,this.cn);
            JasperViewer.viewReport(print);
-            
-            
         } catch (Exception e) {
-            System.out.print(e.getMessage());
+            System.err.print(e.getMessage());
         }
     }//GEN-LAST:event_btneliminarActionPerformed
 
